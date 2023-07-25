@@ -1,0 +1,19 @@
+services:
+  launchstore:
+    build: .
+    image: launchstore
+    ports:
+      - 3000:3000
+    environment:
+      POSTGRES_PASSWORD: password
+    container_name: launchstore
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+    container_name: postgres
