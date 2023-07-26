@@ -1,0 +1,18 @@
+services:
+## docker build -t launchstore-semana-devops .
+## docker run -p 80:80 launchstore-semana-devops
+  launchstore:
+    build: .
+    image: launchstore-semana-devops
+    ports:
+      - 80:80
+    container_name: launchstore
+
+## docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=password postgres
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+    container_name: postgres

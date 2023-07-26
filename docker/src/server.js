@@ -1,11 +1,10 @@
-// // Add this to the very top of the first file loaded in your app
-// var apm = require('elastic-apm-node').start({
-//   serviceName: 'launchstore',
-//   secretToken: 'CHVh3HCWOChB5Q2mQt',
-//   serverUrl: 'https://4fe1d29230dc4fc3936909f42553ee84.apm.us-east-1.aws.cloud.es.io:443',
-//   environment: 'my-environment'
-// })
-
+// Add this to the very top of the first file loaded in your app
+var apm = require('elastic-apm-node').start({
+  serviceName: 'launch-store',
+  secretToken: 'nrw6so4TqXTe3BC2N1',
+  serverUrl: 'https://3ac6a57e51374759955f74f1070ddda2.apm.us-east-1.aws.cloud.es.io:443',
+  environment: 'production'
+})
 const express = require('express');
 const nunjucks = require('nunjucks');
 const methodOverride = require('method-override');
@@ -33,6 +32,6 @@ nunjucks.configure('src/app/views', {
   noCache: true
 });
 
-server.listen(3000, function () {
-  console.log('server is running on port 3000.');
+server.listen(80, function () {
+  console.log('server is running on port 80.');
 });
